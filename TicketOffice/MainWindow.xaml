@@ -1,0 +1,36 @@
+﻿<Window x:Class="TicketOffice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicketOffice"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="25"/>
+            <RowDefinition/>
+            <RowDefinition MaxHeight="40"/>
+        </Grid.RowDefinitions>
+        <ComboBox Name="TypeBox" Grid.Column="0" Grid.Row="0"  DropDownClosed="TypeBox_OnDropDownClosed"></ComboBox>
+        <DataGrid Name="Table" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="0" AutoGenerateColumns="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate> 
+                        <DataTemplate> 
+                            <Button Click="ButtonBase_OnClick">Delete</Button> 
+                        </DataTemplate> 
+                    </DataGridTemplateColumn.CellTemplate> 
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Name="BottomPanel" HorizontalAlignment="Center" Grid.ColumnSpan = "4" Grid.Column="0" Grid.Row="2" Orientation="Horizontal" ></StackPanel>
+    </Grid>
+</Window>
